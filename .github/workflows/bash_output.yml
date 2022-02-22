@@ -12,5 +12,7 @@ jobs:
         id: hello
       - name: debuging output
         run: {{toJSON(steps.hello)}}
+      - name: debuging output
+        run: {{toJSON(steps.hello.outputs)}}
 
 
