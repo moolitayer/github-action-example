@@ -1,7 +1,8 @@
+---
 name: bash_output_test
 on: [push]
 jobs:
-  bootstrap-simple:
+  bash_output:
     runs-on: ubuntu-18.04
     steps:
       - name: Check out repository code
@@ -11,8 +12,8 @@ jobs:
           echo "hello world"
         id: hello
       - name: debuging output
-        run: {{toJSON(steps.hello)}}
+        run: echo "${{ toJSON(steps.hello) }}"
       - name: debuging output
-        run: {{toJSON(steps.hello.outputs)}}
+        run: echo "{{toJSON(steps.hello.outputs)}}"
 
 
