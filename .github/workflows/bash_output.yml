@@ -1,0 +1,16 @@
+name: bash_output_test
+on: [push]
+jobs:
+  bootstrap-simple:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: run bash command with output
+        run: |
+          echo "hello world"
+        id: hello
+      - name: debuging output
+        run: {{toJSON(steps.hello)}}
+
+
